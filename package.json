@@ -6,20 +6,24 @@
   "module": "dist/use-magic-link.module.js",
   "unpkg": "dist/use-magic-link.umd.js",
   "scripts": {
-    "build": "microbundle",
-    "dev": "microbundle watch"
+    "build": "tsc -p tsconfig.release.json",
+    "build:watch": "tsc -w -p tsconfig.release.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "license": "MIT",
   "devDependencies": {
-    "microbundle": "^0.12.0",
-    "react": "^16.13.1"
+    "@types/event-emitter": "^0.3.3",
+    "react": "^16.13.1",
+    "typescript": "^4.0.2"
   },
   "peerDependencies": {
     "react": "^16.11.0"
   },
   "dependencies": {
     "async-sema": "^3.1.0",
-    "event-emitter": "^0.3.5",
-    "isomorphic-unfetch": "^3.0.0"
+    "isomorphic-unfetch": "^3.0.0",
+    "magic-sdk": "^2.5.1"
   }
 }
